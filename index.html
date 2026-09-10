@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>SENTINELA — Segurança Digital</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <div class="brand">🛡️ SENTINELA</div>
+  <div class="tag">Sua segurança digital em primeiro lugar</div>
+</header>
+
+
+<main>
+
+  <!-- ==================================================
+       HOME
+       ================================================== -->
+
+  <section id="home" class="screen active">
+
+    <div class="hero">
+
+      <div class="shield">🛡️</div>
+
+      <h1>SENTINELA</h1>
+
+      <p>
+        Antes de clicar, consulte o SENTINELA.
+      </p>
+
+      <div class="home-actions">
+
+        <button onclick="show('analyze')">
+          🔎 Analisar situação →
+        </button>
+
+        <button
+          class="secondary"
+          onclick="startChallenge()"
+        >
+          🎮 Desafio Sentinela →
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ==================================================
+       ANALISADOR
+       ================================================== -->
+
+  <section id="analyze" class="screen">
+
+    <h2>🔎 Analise uma situação</h2>
+
+    <label>
+      Tipo de situação
+    </label>
+
+    <select id="category">
+
+      <option>WhatsApp / SMS</option>
+
+      <option>E-mail</option>
+
+      <option>Oferta / Promoção</option>
+
+      <option>Proposta de emprego</option>
+
+      <option>Pix / Pagamento</option>
+
+      <option>Link</option>
+
+      <option>Rede social</option>
+
+      <option>Outro</option>
+
+    </select>
+
+
+    <label>
+      Mensagem ou descrição
+    </label>
+
+    <textarea
+      id="message"
+      maxlength="1000"
+      placeholder="Use uma situação fictícia. Não informe senhas, códigos ou dados pessoais reais."
+    ></textarea>
+
+
+    <div class="actions">
+
+      <button
+        class="secondary"
+        onclick="document.getElementById('message').value=''"
+      >
+        Limpar
+      </button>
+
+      <button onclick="analyze()">
+        Analisar agora →
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- ==================================================
+       RESULTADO
+       ================================================== -->
+
+  <section id="result" class="screen">
+
+    <div id="riskBox" class="risk">
+
+      <div id="level"></div>
+
+      <strong id="score"></strong>
+
+    </div>
+
+
+    <h3>
+      🔍 Principais sinais identificados
+    </h3>
+
+    <div id="signals"></div>
+
+
+    <h3>
+      🛡️ O que fazer?
+    </h3>
+
+    <div id="tips"></div>
+
+
+    <details>
+
+      <summary>
+        🧠 Ver lógica completa da análise
+      </summary>
+
+      <div id="logic"></div>
+
+    </details>
+
+
+    <div class="actions">
+
+      <button
+        class="secondary"
+        onclick="newAnalysis()"
+      >
+        🔄 Nova análise
+      </button>
+
+      <button
+        onclick="startChallenge()"
+      >
+        🎮 Fazer desafio
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- ==================================================
+       DESAFIO SENTINELA
+       ================================================== -->
+
+  <section id="challenge" class="screen">
+
+    <div class="challenge-header">
+
+      <div>
+
+        <h2>
+          🎮 Desafio Sentinela
+        </h2>
+
+        <p>
+          Teste sua capacidade de tomar decisões seguras.
+        </p>
+
+      </div>
+
+      <div
+        id="challengeProgress"
+        class="challenge-progress"
+      >
+        Questão 1 de 20
+      </div>
+
+    </div>
+
+
+    <!-- BARRA DE PROGRESSO -->
+
+    <div class="progress-container">
+
+      <div
+        id="progressBar"
+        class="progress-bar"
+      ></div>
+
+    </div>
+
+
+    <!-- CATEGORIA -->
+
+    <div
+      id="challengeCategory"
+      class="challenge-category"
+    >
+      Categoria
+    </div>
+
+
+    <!-- SITUAÇÃO -->
+
+    <div class="challenge-card">
+
+      <h3>
+        Situação
+      </h3>
+
+      <p
+        id="challengeSituation"
+        class="challenge-situation"
+      >
+        Carregando...
+      </p>
+
+    </div>
+
+
+    <!-- PERGUNTA -->
+
+    <h3>
+      Qual é a decisão mais segura?
+    </h3>
+
+
+    <!-- ALTERNATIVAS -->
+
+    <div
+      id="challengeOptions"
+      class="challenge-options"
+    >
+    </div>
+
+
+    <!-- FEEDBACK -->
+
+    <div
+      id="challengeFeedback"
+      class="challenge-feedback"
+      style="display:none;"
+    >
+
+      <div
+        id="feedbackTitle"
+        class="feedback-title"
+      ></div>
+
+      <p
+        id="feedbackText"
+      ></p>
+
+      <div
+        id="feedbackPoints"
+        class="feedback-points"
+      ></div>
+
+      <button
+        onclick="nextChallenge()"
+      >
+        Próxima situação →
+      </button>
+
+    </div>
+
+
+    <div class="actions">
+
+      <button
+        class="secondary"
+        onclick="show('home')"
+      >
+        ← Voltar ao início
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- ==================================================
+       PERFIL
+       ================================================== -->
+
+  <section id="profile" class="screen">
+
+    <div class="hero">
+
+      <div class="shield">
+        🛡️
+      </div>
+
+      <h2>
+        Meu Perfil Sentinela
+      </h2>
+
+      <div
+        id="profileLevel"
+        class="profile-level"
+      >
+        Em Treinamento
+      </div>
+
+      <div
+        id="profileScore"
+        class="profile-score"
+      >
+        0 / 100
+      </div>
+
+      <div
+        id="profileMessage"
+        class="profile-message"
+      >
+        Complete os desafios para descobrir seu nível.
+      </div>
+
+      <div class="actions">
+
+        <button onclick="startChallenge()">
+          🎮 Fazer desafio novamente
+        </button>
+
+        <button
+          class="secondary"
+          onclick="show('home')"
+        >
+          ← Início
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<footer>
+
+  Protótipo educacional • Resultado = avaliação de risco,
+  não garantia de fraude.
+
+</footer>
+
+
+<!-- ====================================================
+     ARQUIVOS JAVASCRIPT
+     ==================================================== -->
+
+<script src="data.js"></script>
+
+<script src="engine.js"></script>
+
+<script src="challenge.js"></script>
+
+<script src="app.js"></script>
+
+</body>
+
+</html>

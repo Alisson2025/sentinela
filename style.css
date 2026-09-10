@@ -1,0 +1,733 @@
+/* ======================================================
+   SENTINELA 1.1 — ESTILO PRINCIPAL
+   ====================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+
+/* ======================================================
+   BASE
+   ====================================================== */
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #eef5f7;
+  color: #102a43;
+  line-height: 1.5;
+}
+
+
+/* ======================================================
+   CABEÇALHO
+   ====================================================== */
+
+header {
+  background: #082b45;
+  color: white;
+  padding: 18px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.brand {
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+}
+
+.tag {
+  opacity: 0.85;
+}
+
+
+/* ======================================================
+   ÁREA PRINCIPAL
+   ====================================================== */
+
+main {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 0 18px;
+}
+
+.screen {
+  display: none;
+}
+
+.screen.active {
+  display: block;
+}
+
+.hero,
+.screen {
+  background: white;
+  border-radius: 20px;
+  padding: 34px;
+  box-shadow: 0 8px 30px #00000012;
+}
+
+
+/* ======================================================
+   TELA INICIAL
+   ====================================================== */
+
+.hero {
+  text-align: center;
+}
+
+.shield {
+  font-size: 76px;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin: 8px;
+}
+
+.hero p {
+  font-size: 20px;
+}
+
+
+/* ======================================================
+   TÍTULOS
+   ====================================================== */
+
+h2 {
+  margin-top: 0;
+}
+
+h3 {
+  margin-top: 28px;
+  margin-bottom: 12px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin: 18px 0 7px;
+}
+
+
+/* ======================================================
+   CAMPOS
+   ====================================================== */
+
+select,
+textarea {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #bfd0dc;
+  border-radius: 12px;
+  font: inherit;
+  color: #102a43;
+  background: white;
+}
+
+textarea {
+  min-height: 190px;
+  resize: vertical;
+}
+
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #1287e8;
+  box-shadow: 0 0 0 3px #1287e820;
+}
+
+
+/* ======================================================
+   BOTÕES
+   ====================================================== */
+
+button {
+  border: 0;
+  border-radius: 12px;
+  padding: 14px 22px;
+  background: #1287e8;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    opacity 0.15s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 15px #1287e830;
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+button.secondary {
+  background: #dceaf4;
+  color: #123;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+
+/* ======================================================
+   RESULTADO DE RISCO
+   ====================================================== */
+
+.risk {
+  border-radius: 16px;
+  padding: 24px;
+  text-align: center;
+  background: #dff4e8;
+  transition: 0.2s ease;
+}
+
+.risk.high {
+  background: #ffdce0;
+}
+
+.risk.elevated {
+  background: #ffe8d1;
+}
+
+.risk.attention {
+  background: #fff3bf;
+}
+
+#level {
+  font-size: 25px;
+  font-weight: 800;
+}
+
+.risk strong {
+  font-size: 42px;
+  display: block;
+  margin-top: 8px;
+}
+
+
+/* ======================================================
+   DESCRIÇÃO DO RISCO
+   ====================================================== */
+
+#riskDescription {
+  max-width: 700px;
+  margin: 16px auto 0;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+
+/* ======================================================
+   INDICADORES
+   ====================================================== */
+
+.signal {
+  padding: 14px 16px;
+  margin: 8px 0;
+  border-radius: 10px;
+  background: #f1f6fa;
+  border: 1px solid transparent;
+  transition: 0.15s ease;
+}
+
+.signal:hover {
+  border-color: #bfd0dc;
+  transform: translateX(2px);
+}
+
+.signal b {
+  font-size: 16px;
+}
+
+.signal small {
+  font-size: 14px;
+  margin-left: 4px;
+  color: #587080;
+}
+
+.signal small:last-child {
+  display: block;
+  margin: 5px 0 0 28px;
+  line-height: 1.4;
+}
+
+
+/* ======================================================
+   ORIENTAÇÕES
+   ====================================================== */
+
+.tip {
+  padding: 14px 16px;
+  margin: 8px 0;
+  border-radius: 10px;
+  background: #e5f7ee;
+  border-left: 4px solid #36a269;
+}
+
+
+/* ======================================================
+   PAINEL DE EXPLICABILIDADE
+   ====================================================== */
+
+.sentinela-detail {
+  margin-top: 10px;
+}
+
+.sentinela-detail h3 {
+  color: #082b45;
+}
+
+
+/* ======================================================
+   RESUMO DA PONTUAÇÃO
+   ====================================================== */
+
+.score-summary {
+  background: #f5f8fa;
+  border-radius: 14px;
+  padding: 8px 16px;
+  border: 1px solid #e1e9ee;
+}
+
+.score-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding: 12px 4px;
+  border-bottom: 1px solid #dce5eb;
+}
+
+.score-line:last-child {
+  border-bottom: 0;
+}
+
+.score-line strong {
+  font-size: 18px;
+}
+
+.score-line.total {
+  font-weight: 700;
+}
+
+.score-line.final {
+  margin-top: 5px;
+  padding: 15px 10px;
+  border-radius: 10px;
+  background: #e8f2f8;
+  color: #082b45;
+}
+
+.score-line.final strong {
+  font-size: 22px;
+}
+
+
+/* ======================================================
+   LISTA DE INDICADORES DETALHADA
+   ====================================================== */
+
+.indicator-list,
+.combination-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.logic-item {
+  display: grid;
+  grid-template-columns: 30px 1fr auto;
+  align-items: start;
+  gap: 8px;
+  padding: 13px 15px;
+  border-radius: 11px;
+  background: #f1f6fa;
+  border: 1px solid #e3ebf0;
+}
+
+.logic-item span {
+  font-size: 18px;
+}
+
+.logic-item b {
+  display: block;
+}
+
+.logic-item strong {
+  color: #1287e8;
+  white-space: nowrap;
+}
+
+.logic-item small {
+  display: block;
+  margin-top: 4px;
+  color: #587080;
+  line-height: 1.4;
+}
+
+
+/* ======================================================
+   EXPLICAÇÃO
+   ====================================================== */
+
+.explanation {
+  background: #f5f8fa;
+  border-radius: 14px;
+  padding: 16px 18px;
+  border-left: 4px solid #1287e8;
+}
+
+.explanation p {
+  margin: 8px 0;
+}
+
+
+/* ======================================================
+   METODOLOGIA
+   ====================================================== */
+
+.methodology {
+  margin-top: 22px;
+  padding: 16px 18px;
+  background: #eef5f7;
+  border-radius: 14px;
+  color: #40586b;
+  font-size: 14px;
+}
+
+.methodology b {
+  color: #102a43;
+}
+
+.methodology p {
+  margin: 8px 0;
+}
+
+
+/* ======================================================
+   BOTÕES DO SENTINELA
+   ====================================================== */
+
+.sentinela-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 25px;
+  flex-wrap: wrap;
+}
+
+.primary-button,
+.secondary-button {
+  min-width: 210px;
+}
+
+.primary-button {
+  background: #1287e8;
+}
+
+.secondary-button {
+  background: #dceaf4;
+  color: #123;
+}
+
+
+/* ======================================================
+   DETALHES
+   ====================================================== */
+
+details {
+  margin-top: 20px;
+  padding: 14px;
+  background: #f5f7f9;
+  border-radius: 12px;
+}
+
+
+/* ======================================================
+   RODAPÉ
+   ====================================================== */
+
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #587080;
+  font-size: 12px;
+}
+
+
+/* ======================================================
+   RESPONSIVIDADE
+   ====================================================== */
+
+@media (max-width: 650px) {
+
+  header {
+    display: block;
+  }
+
+  .tag {
+    margin-top: 6px;
+  }
+
+  .hero h1 {
+    font-size: 38px;
+  }
+
+  .screen {
+    padding: 22px;
+  }
+
+  .hero,
+  .screen {
+    border-radius: 16px;
+  }
+
+  .risk strong {
+    font-size: 36px;
+  }
+
+  .score-line {
+    align-items: flex-start;
+  }
+
+  .logic-item {
+    grid-template-columns: 26px 1fr;
+  }
+
+  .logic-item strong {
+    grid-column: 2;
+  }
+
+  .sentinela-actions {
+    flex-direction: column;
+  }
+
+  .primary-button,
+  .secondary-button {
+    width: 100%;
+  }
+}
+/* ======================================================
+   DESAFIO SENTINELA
+   ====================================================== */
+
+.home-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+
+.challenge-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 15px;
+}
+
+.challenge-progress {
+  background: #dceaf4;
+  color: #082b45;
+  padding: 9px 14px;
+  border-radius: 20px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.progress-container {
+  width: 100%;
+  height: 10px;
+  background: #e5edf2;
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 15px 0 25px;
+}
+
+.progress-bar {
+  width: 0%;
+  height: 100%;
+  background: #1287e8;
+  border-radius: 20px;
+  transition: width 0.3s ease;
+}
+
+.challenge-category {
+  display: inline-block;
+  padding: 8px 13px;
+  background: #e5f7ee;
+  color: #276849;
+  border-radius: 20px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.challenge-card {
+  background: #f1f6fa;
+  border-radius: 16px;
+  padding: 20px;
+  border-left: 5px solid #1287e8;
+  margin-bottom: 25px;
+}
+
+.challenge-card h3 {
+  margin-top: 0;
+}
+
+.challenge-situation {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.challenge-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.challenge-option {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-align: left;
+  background: #f1f6fa;
+  color: #102a43;
+  border: 2px solid #dce5eb;
+  padding: 16px;
+  border-radius: 14px;
+  transition: 0.15s ease;
+}
+
+.challenge-option:hover {
+  background: #e8f2f8;
+  border-color: #1287e8;
+  transform: translateX(3px);
+}
+
+.challenge-option:disabled {
+  cursor: default;
+  opacity: 1;
+}
+
+.option-letter {
+  min-width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #dceaf4;
+  color: #082b45;
+  border-radius: 50%;
+  font-weight: 800;
+}
+
+.challenge-option.correct {
+  background: #dff4e8;
+  border-color: #36a269;
+  color: #185c3a;
+}
+
+.challenge-option.correct .option-letter {
+  background: #36a269;
+  color: white;
+}
+
+.challenge-option.incorrect {
+  background: #ffdce0;
+  border-color: #d94b5b;
+  color: #7d1d29;
+}
+
+.challenge-option.incorrect .option-letter {
+  background: #d94b5b;
+  color: white;
+}
+
+.challenge-feedback {
+  margin-top: 25px;
+  padding: 22px;
+  border-radius: 16px;
+  background: #eef5f7;
+  border: 1px solid #dce5eb;
+}
+
+.feedback-title {
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.feedback-points {
+  display: inline-block;
+  margin: 10px 0 18px;
+  padding: 8px 14px;
+  border-radius: 20px;
+  background: #dceaf4;
+  color: #082b45;
+  font-weight: 800;
+}
+
+.profile-level {
+  font-size: 25px;
+  font-weight: 800;
+  margin: 15px 0;
+}
+
+.profile-score {
+  font-size: 48px;
+  font-weight: 800;
+  margin: 10px 0;
+  color: #1287e8;
+}
+
+.profile-message {
+  max-width: 600px;
+  margin: 0 auto 20px;
+  font-size: 18px;
+  color: #587080;
+}
+
+@media (max-width: 650px) {
+
+  .challenge-header {
+    display: block;
+  }
+
+  .challenge-progress {
+    display: inline-block;
+    margin-top: 8px;
+  }
+
+  .challenge-situation {
+    font-size: 16px;
+  }
+
+  .challenge-option {
+    padding: 14px;
+  }
+
+  .home-actions {
+    flex-direction: column;
+  }
+
+  .home-actions button {
+    width: 100%;
+  }
+
+}
